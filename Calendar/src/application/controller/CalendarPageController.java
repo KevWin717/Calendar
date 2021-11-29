@@ -1,4 +1,5 @@
 package application.controller;
+//Group 3 Easy Event project
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -31,7 +32,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-	
+
+/* This is the controller for the CalendarPage.fxml.
+*  This page is prompted after a use has login. Once a user is on this page,
+*  users will be able to add, delete, and use the calendar.
+*/
 public class CalendarPageController {
     private String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     @FXML
@@ -76,6 +81,8 @@ public class CalendarPageController {
     	Calendar();
     	populateDate(YearMonth.now());
     }
+	
+    //When logout button is clicked, users will be signed out and returned to the login screen.
     @FXML
     void LogOut(ActionEvent event) throws IOException {
     	Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -92,6 +99,8 @@ public class CalendarPageController {
             stage.show();
     	}
     }
+	
+    //The view will change and the user will be able to see the events during the week
     @FXML
     void changeWeekView(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/AllEvents.fxml"));
@@ -105,6 +114,7 @@ public class CalendarPageController {
         stage.show();
     }
 
+    //Users will be able to delete an event once made
     @FXML
     void ChangeDeleteEvent(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/DeleteEvent.fxml"));
@@ -118,6 +128,7 @@ public class CalendarPageController {
         stage.show();
     }
 
+    //This method allows user to change an event that was already added
     @FXML
     void ChangeAddEvent(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/AddEvent.fxml"));
@@ -130,6 +141,8 @@ public class CalendarPageController {
         stage.setScene(scene);
         stage.show();
     }
+    
+    //After a user clicks on the button, users will be able to go through each month.
     @FXML
     void changeMonth(ActionEvent event) {
     	if(event.getTarget() == previousMonth) {
@@ -151,6 +164,7 @@ public class CalendarPageController {
     		}
     	}
     }
+    //This method shows the calendar and set the calendar to the Gregorian calendar
     public void Calendar(){
     	event = new Event(events);
     	try {
@@ -177,9 +191,12 @@ public class CalendarPageController {
     	showHeader();
     	populateDate(YearMonth.now());
     }
+	
+    //This method indicares what month/year it is
     public void showHeader() {
     	monthLabel.setText(months[month] + ", " + year);
     }
+    //This method populates the calendar and enters the dates
     private void populateDate(YearMonth yearMonthNow){
     	try {
 			event.loadEvents(user.getUser());
@@ -249,22 +266,26 @@ public class CalendarPageController {
 
         }
     }
+    //Make sure the added dates are in calendar range
     private boolean isDateInRange(YearMonth entireMonth, LocalDate current){
         LocalDate start = LocalDate.of(entireMonth.getYear(), entireMonth.getMonth(), 1);
         LocalDate end = LocalDate.of(entireMonth.getYear(), entireMonth.getMonth(), entireMonth.lengthOfMonth());
         return (!current.isBefore(start)) && (current.isBefore(end));
     }
+    //make sure the year and month is displayed when the calendar changes
     private void changeCalendar(int year, String month){
         DateTimeFormatter formatter = new DateTimeFormatterBuilder().parseCaseInsensitive().appendPattern("yyyy MMMM").toFormatter(Locale.ENGLISH);
         populateDate(YearMonth.parse(year + " " + month, formatter));
         selectedMonth = month;
     }
+    //sets the month in the calendar
     public void setMonth(int nextMonth) {
     	month = nextMonth;
     	selectedMonth = months[month];
     	changeCalendar(year, selectedMonth);
     	showHeader();
     }
+    //sets year in the header
     public void setYear(int nextYear) {
     	year = nextYear;
     	changeCalendar(year, selectedMonth);
