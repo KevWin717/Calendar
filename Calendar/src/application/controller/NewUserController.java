@@ -1,4 +1,5 @@
 package application.controller;
+//Group 3 Easy Events project
 
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -19,6 +20,9 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+/* This class is a controller for the NewUser.fxml
+*  After prompted the login screen, users will be able to make a new account if their new
+*/
 public class NewUserController {
 	@FXML
     private Button confirm;
@@ -44,6 +48,8 @@ public class NewUserController {
     public User user;
     public String[] check;
     public String userName, pass, fullEmail, confirmation, person;
+	
+    //initialize
     public void initialize() throws FileNotFoundException {
     	user= new User(users);
     	user.loadUsers();
