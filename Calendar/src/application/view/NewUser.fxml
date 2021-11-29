@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.NewUserController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="380.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" width="580.0" />
+      <ImageView fitHeight="380.0" fitWidth="580.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../images/sky.jpeg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="username" layoutX="170.0" layoutY="113.0" prefHeight="28.0" prefWidth="284.0" />
+      <TextField fx:id="password" layoutX="170.0" layoutY="160.0" prefHeight="28.0" prefWidth="284.0" />
+      <Label layoutX="77.0" layoutY="113.0" prefHeight="28.0" prefWidth="85.0" text="Username:">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="80.0" layoutY="160.0" prefHeight="28.0" prefWidth="79.0" text="Password:">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="20.0" layoutY="207.0" prefHeight="27.0" prefWidth="143.0" text="Confirm password:">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <TextField fx:id="confirmPassword" layoutX="170.0" layoutY="206.0" prefHeight="28.0" prefWidth="284.0" />
+      <TextField fx:id="email" layoutX="170.0" layoutY="257.0" prefHeight="28.0" prefWidth="284.0" />
+      <Label layoutX="112.0" layoutY="261.0" text="Email:">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Button fx:id="confirm" layoutX="170.0" layoutY="312.0" mnemonicParsing="false" onAction="#CreateUser" prefHeight="48.0" prefWidth="105.0" text="Confirm" />
+      <Button fx:id="back" layoutX="330.0" layoutY="312.0" mnemonicParsing="false" onAction="#BackScreen" prefHeight="48.0" prefWidth="105.0" text="Back" textFill="#d35555" />
+      <Label layoutX="110.0" layoutY="68.0" prefHeight="28.0" prefWidth="49.0" text="Name:">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <TextField fx:id="individual" layoutX="170.0" layoutY="68.0" prefHeight="28.0" prefWidth="284.0" />
+      <Label layoutX="142.0" layoutY="22.0" text="New User Information:">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
