@@ -7,6 +7,11 @@ Our group:
 -Kevin Nguyen  
 -Altamish Merchant  
 
+# What is Easy Events?
+
+This application is a calendar that is password protected. Users will be able to log in and add an account to access their own personalized calendar. Users will be able to add events, delete events, and browse the calendar. When users are done adding events, they will be displayed a week view of their own events. Users will be able to add onto their calendar as well as take off any events they want.  
+
+
 # Features
 
 **User Input**
