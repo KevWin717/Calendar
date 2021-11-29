@@ -1,4 +1,5 @@
 package application.controller;
+//Group 3 Easy Event project
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -21,6 +22,9 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+/* This controller is for the DeleteEvent.fxml.
+*  Users will be able to delete an event after creating one.
+*/
 public class DeleteEventController{
 	@FXML
     private Button cancel;
@@ -40,6 +44,7 @@ public class DeleteEventController{
 		choiceBox.getItems().addAll(events);
 		choiceBox.setOnAction(this::getDate);
 	}
+    //This method goes back to the calendar page after the back button is pushed.
     @FXML
     void BackScreen(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/CalendarPage.fxml"));
@@ -52,6 +57,7 @@ public class DeleteEventController{
         stage.setScene(scene);
         stage.show();
     }
+    //This method deletes an event that was made, lists out the txt so a user can choose
     @FXML
     void deleteEvent(ActionEvent event) throws IOException {
     	String line = currentEvent.getDay()+","+currentEvent.getTime()+","+currentEvent.getDescription()+","+currentEvent.getNotes();
@@ -80,7 +86,7 @@ public class DeleteEventController{
         stage.show();
     }
 	
-    
+    //This method gets the date
     public void getDate(ActionEvent event) {
     	currentEvent = choiceBox.getValue();
     }
