@@ -1,4 +1,5 @@
 package application.controller;
+//Group 3 Easy Events project
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -17,6 +18,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+/* This is the controller class for the AllEvents.fxml.
+*  Users will be displayed all events that the user inputted into the calendar
+*/ 
 public class AllEventsController {
 	@FXML
     private TextArea eventList;
@@ -43,6 +47,8 @@ public class AllEventsController {
     		eventList.setText("There are no events to display.");
     	}
     }
+
+    //This method allows user to return back into the calendar page when the button is clicked
     @FXML
     void ReturnToCalendar(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/CalendarPage.fxml"));
@@ -56,6 +62,7 @@ public class AllEventsController {
         stage.show();
     }
 
+    //This method creates the event screen and goes to the add events
     @FXML
     void CreateEventScreen(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/AddEvent.fxml"));
@@ -69,6 +76,7 @@ public class AllEventsController {
         stage.show();
     }
 	
+    //This will let users go to the delete event page	
     @FXML
     void DeleteEventScreen(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/DeleteEvent.fxml"));
