@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CalendarPageController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="690.0" layoutX="5.0" layoutY="5.0" strokeType="INSIDE" width="1090.0" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <fill>
+            <LinearGradient endX="0.49029126213592233" endY="1.0" startX="0.5145631067961165">
+               <stops>
+                  <Stop color="#b4b0ff" />
+                  <Stop color="#574be1" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </stroke></Rectangle>
+      <ImageView fitHeight="690.0" fitWidth="1090.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../images/sky.jpeg" />
+         </image>
+      </ImageView>
+      <Label fx:id="welcomeLabel" layoutX="14.0" layoutY="14.0" prefHeight="61.0" prefWidth="386.0" text="Welcome &lt;username&gt;">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="monthLabel" alignment="CENTER" layoutX="282.0" layoutY="209.0" prefHeight="17.0" prefWidth="157.0" text="Month" textAlignment="CENTER" />
+      <Label layoutX="87.0" layoutY="242.0" text="Sunday" />
+      <Label layoutX="167.0" layoutY="241.0" text="Monday" />
+      <Label layoutX="255.0" layoutY="241.0" text="Tuesday" />
+      <Label layoutX="331.0" layoutY="242.0" text="Wednesday" />
+      <Label layoutX="421.0" layoutY="242.0" text="Thursday" />
+      <Label layoutX="511.0" layoutY="242.0" text="Friday" />
+      <Label layoutX="592.0" layoutY="242.0" text="Saturday" />
+      <Button fx:id="previousMonth" layoutX="211.0" layoutY="205.0" mnemonicParsing="false" onAction="#changeMonth" text="Previous" />
+      <Button fx:id="nextMonth" layoutX="440.0" layoutY="205.0" mnemonicParsing="false" onAction="#changeMonth" prefHeight="25.0" prefWidth="61.0" text="Next" />
+      <GridPane fx:id="gridpane" gridLinesVisible="true" layoutX="62.0" layoutY="267.0" prefHeight="400.0" prefWidth="600.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <TextArea fx:id="dayListing" layoutX="695.0" layoutY="226.0" prefHeight="455.0" prefWidth="386.0" />
+      <Label fx:id="curDay" layoutX="695.0" layoutY="197.0" prefHeight="41.0" prefWidth="415.0" text="Here are your events for &lt;fulldate&gt;:" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="allEvents" layoutX="965.0" layoutY="139.0" mnemonicParsing="false" onAction="#changeWeekView" prefHeight="61.0" prefWidth="116.0" text="View all events" />
+      <Button fx:id="deleteEvent" layoutX="965.0" layoutY="74.0" mnemonicParsing="false" onAction="#ChangeDeleteEvent" prefHeight="61.0" prefWidth="116.0" text="Delete an event" />
+      <Button fx:id="addEvent" layoutX="965.0" layoutY="10.0" mnemonicParsing="false" onAction="#ChangeAddEvent" prefHeight="61.0" prefWidth="116.0" text="Add an event" />
+      <Button fx:id="loggingOut" layoutX="14.0" layoutY="71.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="17.0" prefWidth="122.0" style="-fx-background-color: #000000,        linear-gradient(#575757 50%, black 100%),        radial-gradient(center 50% -40%, radius 200%, #262626 45%, rgba(230,230,230,0) 50%); -fx-background-radius: 30; -fx-background-insets: 0,1,1; -fx-text-fill: white;" text="Log out" />
+   </children>
+</AnchorPane>

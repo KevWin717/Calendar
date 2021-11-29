@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="800.0" maxWidth="800.0" minWidth="0.0" prefHeight="511.0" prefWidth="542.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.WelcomePageController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="491.0" layoutX="14.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="522.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <fill>
+            <LinearGradient endX="0.1601941747572816" endY="1.0" startX="0.07281553398058252">
+               <stops>
+                  <Stop color="#696cff" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fitHeight="491.0" fitWidth="522.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../images/sky.jpeg" />
+         </image>
+      </ImageView>
+      <Label layoutX="175.0" layoutY="73.0" prefHeight="58.0" prefWidth="194.0" text="Welcome!">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Label>
+      <Button fx:id="newuser" layoutX="193.0" layoutY="406.0" mnemonicParsing="false" onAction="#CreateUser" prefHeight="58.0" prefWidth="156.0" text="New User">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label layoutX="183.0" layoutY="292.0" />
+      <Label layoutX="82.0" layoutY="178.0" text="Username:">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <PasswordField fx:id="password" layoutX="186.0" layoutY="225.0" prefHeight="28.0" prefWidth="170.0" />
+      <Label layoutX="82.0" layoutY="229.0" text="Password:">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <TextField fx:id="username" layoutX="188.0" layoutY="174.0" prefHeight="28.0" prefWidth="170.0" />
+      <Button fx:id="loggingIn" layoutX="193.0" layoutY="320.0" mnemonicParsing="false" onAction="#LogIn" prefHeight="72.0" prefWidth="156.0" text="Log in">
+         <font>
+            <Font size="25.0" />
+         </font></Button>
+      <Label fx:id="invalid" layoutX="209.0" layoutY="269.0" prefHeight="40.0" prefWidth="124.0" />
+   </children>
+</AnchorPane>
