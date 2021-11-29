@@ -1,5 +1,5 @@
 package application.controller;
-
+//Group 3 EasyEvent project
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -20,14 +20,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
+//
 public class WelcomePageController {
-	@FXML
+//Below are the fxml controls for this page:
+    @FXML
     private Button newuser;
-
     @FXML
     private PasswordField password;
-
     @FXML
     private Button loggingIn;
     @FXML
@@ -50,6 +49,7 @@ public class WelcomePageController {
     		throw new Exception("Please enter a username");
     	}
     }
+//CreateUser loads the the NewUser.fxml file.
     @FXML
     void CreateUser(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/NewUser.fxml"));
@@ -60,6 +60,7 @@ public class WelcomePageController {
         stage.setScene(scene);
         stage.show();
     }
+//PasswordForgotScreen is not being used.
     @FXML
     void PasswordForgotScreen(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/ForgotPassword.fxml"));
@@ -70,6 +71,7 @@ public class WelcomePageController {
         stage.setScene(scene);
         stage.show();
     }
+//LogIn checks if user exists, if not the error "Incorrect input" is printed if it is CalendarPage is loaded
     @FXML
     void LogIn(ActionEvent event) throws FileNotFoundException {
     	user = new User(users);
