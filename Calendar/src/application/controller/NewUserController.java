@@ -49,7 +49,7 @@ public class NewUserController {
     public String[] check;
     public String userName, pass, fullEmail, confirmation, person;
 	
-    //initialize
+    //initialize user for username and password, if user does not fill out everything it prompts user.
     public void initialize() throws FileNotFoundException {
     	user= new User(users);
     	user.loadUsers();
@@ -63,6 +63,8 @@ public class NewUserController {
     		}
     	}
     }
+	
+    //This method allows user to creat a user with the information
     @FXML
     void CreateUser(ActionEvent event) throws IOException {
     	output = new BufferedWriter(new FileWriter("data/users.txt", true));
@@ -99,6 +101,8 @@ public class NewUserController {
     	}
     	output.close();
     }
+	
+    //Allows user to go back to the login screen
     @FXML
     void BackScreen(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/WelcomePage.fxml"));
