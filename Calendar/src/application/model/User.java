@@ -1,4 +1,6 @@
 package application.model;
+//Group 3 EasyEvent project
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -6,18 +8,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
+//User class creates a User object with a String varibale holding the users name, 
+//this class also creates a User object with the varibles user, password, individual, email.
+//The User class also has method loadUsers to read user profiles from user.txt and load to Users List.
 public class User {
+	//varibales for this class Strings/ArraysList of Users are created.
 	protected String user, password, individual, email;
 	protected List<User> users = new ArrayList<User>();
+	
+	//this first constructor is used for List of User's.
 	public User(List<User> users) {
 		this.users = users;
 	}
+	//This second constructor is used for individual User.
 	public User(String user, String password, String individual, String email) {
 		this.user = user;
 		this.password = password;
 		this.individual = individual;
 		this.email = email;
 	}
+	//Method loadUsers reads the data file users.txt for previous users and creates User objects with the data.
 	public void loadUsers() throws FileNotFoundException {
 		String fLine;
 		String []data;
@@ -38,6 +48,8 @@ public class User {
 		}
 		IN.close();
 	}
+	//The following are getters and setters for the variables:
+	//User, password, individual, Users, and email.
 	public String getUser() {
 		return user;
 	}
