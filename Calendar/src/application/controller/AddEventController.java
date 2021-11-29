@@ -1,4 +1,5 @@
 package application.controller;
+//Group 3 Easy Event project
 
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -23,6 +24,9 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+/* This class will let users add events on the calendar scene.
+*  This is a controller of the AddEvent.fxml file.
+*/
 public class AddEventController {
 	@FXML
     private DatePicker date;
@@ -46,9 +50,13 @@ public class AddEventController {
     		}
     	}
     }
+	
+    //This method initializes the users to the current user
     public void initialize(User user) throws FileNotFoundException {
     	currentUser=user;
     }
+	
+    //This method cancels the scene where users were inputting their events on to the calendar page.
     @FXML
     void CancelEvent(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/CalendarPage.fxml"));
@@ -61,7 +69,8 @@ public class AddEventController {
         stage.setScene(scene);
         stage.show();
     }
-
+    
+    //After a user inouts date, in will prompt the user to enter the right time and date
     @FXML
     void AddConfirmation(ActionEvent event) throws IOException {
     	PrintWriter output = new PrintWriter(new BufferedWriter(new FileWriter("data/events/"+currentUser.getUser()+".txt", true)));
